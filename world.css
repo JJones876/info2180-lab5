@@ -1,0 +1,207 @@
+/* Add your own styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: #1e293b;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 3px solid #38bdf8;
+}
+
+h1 {
+    margin: 0;
+    color: #38bdf8;
+    font-size: 32px;
+}
+
+/* Main content */
+main {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #1e293b;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Search controls */
+#controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Country search input */
+#country {
+    padding: 12px;
+    width: 260px;
+    max-width: 100%;
+    border: 2px solid #334155;
+    border-radius: 8px;
+    background: #0f172a;
+    color: white;
+    font-size: 16px;
+}
+
+#country:focus {
+    outline: none;
+    border-color: #38bdf8;
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #0284c7;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: #38bdf8;
+    color: #0f172a;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Results */
+#result {
+    overflow-x: auto;
+    line-height: 1.6;
+}
+
+#result p {
+    text-align: center;
+    color: #fbbf24;
+    font-size: 17px;
+}
+
+/* Results tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background: #0369a1;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #334155;
+}
+
+tbody tr:nth-child(even) {
+    background: #1e293b;
+}
+
+tbody tr:hover {
+    background: #334155;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    main {
+        margin: 20px 12px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    #controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #country,
+    button {
+        width: 100%;
+    }
+}
+
+.earth-section {
+    text-align: center;
+    padding: 35px 0;
+}
+
+.earth-section p {
+    color: #38bdf8;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.earth-globe {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 50%;
+
+    background-image:
+        url("https://upload.wikimedia.org/wikipedia/commons/8/83/Equirectangular_projection_SW.jpg");
+
+    background-size: 600px 300px;
+    background-repeat: repeat-x;
+
+    box-shadow:
+        inset -35px -12px 45px rgba(0, 0, 0, 0.8),
+        inset 12px 8px 30px rgba(56, 189, 248, 0.3),
+        0 0 30px #00bfff,
+        0 0 75px rgba(0, 136, 255, 0.5);
+
+    animation: earthSpin 25s linear infinite;
+}
+
+@keyframes earthSpin {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -600px 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .earth-globe {
+        animation: none;
+    }
+}
+
+
